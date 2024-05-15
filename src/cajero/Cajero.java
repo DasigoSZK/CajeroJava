@@ -34,6 +34,12 @@ public class Cajero {
 		this.saldo = saldo;
 	}
 	
-	
+	public String toString() {
+		
+		String cajero = "Información del Cajero "+this.getUbicacion()+":\n";
+		cajero += "Saldo: $" + this.getSaldo();
+		
+		return cajero;
+	}
 
 }

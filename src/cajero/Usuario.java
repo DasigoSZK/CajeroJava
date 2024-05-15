@@ -1,5 +1,7 @@
 package cajero;
 
+import javax.swing.JOptionPane;
+
 public abstract class Usuario {
 
 	private String nombre;
@@ -19,8 +21,17 @@ public abstract class Usuario {
 	}
 
 	//----------Metodos----------
-	public boolean iniciarSesion(int pin) {
-		return false;
+	public boolean iniciarSesion(String dni, int pin) {
+		//Comparamos los parámetros ingresados con los guardados en el objeto
+		if(this.getDNI().equals(dni) && this.getPin() == pin) {
+			return true;
+		}else {			
+			return false;
+		}
+	}
+	
+	public void menu(Cajero cajero) {
+		JOptionPane.showMessageDialog(null, "Estoy en el menu");
 	}
 	
 	//Getters - Setters
